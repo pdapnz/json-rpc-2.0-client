@@ -19,7 +19,7 @@ import net.minidev.json.JSONObject;
  */
 public class Test extends TestCase {
 
-	public static final String URL_HTTP_GOOD = "http://demo.c2id.com/json2ldap/";
+	public static final String URL_HTTP_GOOD = "https://demo.c2id.com/json2ldap/";
 	public static final String URL_HTTP_BAD_HOST = "http://bad-host.com/ws/";
 	public static final String URL_HTTP_BAD_PORT = "http://localhost:9999/";
 	public static final String URL_HTTP_BAD_IP = "http://192.168.0.99";
