@@ -1,6 +1,6 @@
 CHANGE LOG
 
-JsonRpc2-Client, Copyright (c) Vladimir Dzhuvinov, 2010 - 2016
+JsonRpc2-Client, Copyright (c) Vladimir Dzhuvinov, 2010 - 2021
 
 
 version 1.0 (2010-11-09)
@@ -116,6 +116,5 @@ version 1.16.4 (2016-02-18)
     * Refactors closing of the input, output and error streams of the HTTP(S)
       URL connection after use.
 
-
-
-
+version 1.16.5 (2021-03-16)
+    * Updates to JSON-RPC 2.0 Base 1.38.2.

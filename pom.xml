@@ -63,7 +63,7 @@
 		<dependency>
 			<groupId>com.thetransactioncompany</groupId>
 			<artifactId>jsonrpc2-base</artifactId>
-			<version>1.36</version>
+			<version>1.38.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
