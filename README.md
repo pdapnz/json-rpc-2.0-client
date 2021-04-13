@@ -29,8 +29,10 @@ Optional client session features:
 
 * Parse non-standard attributes appended in JSON-RPC 2.0 responses.
 
-* Trust all X.509 server certificates (for HTTPS connections), including
-  self-signed.
+* ~Trust all X.509 server certificates (for HTTPS connections), including
+  self-signed.~ (**Removed to avoid triggering X509TrustManager's security 
+  vulnerabilities not compliant with Google Play Policies in Google Play Market.
+  Details: <https://support.google.com/faqs/answer/6346016>**)
 
 
 Requirements:

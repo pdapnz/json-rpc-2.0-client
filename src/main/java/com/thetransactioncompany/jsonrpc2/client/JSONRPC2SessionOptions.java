@@ -33,8 +33,6 @@ import java.util.regex.Pattern;
  *     <li>Set an HTTP proxy.
  *     <li>Enable HTTP response compression (using GZIP or DEFLATE content
  *         encoding).
- *     <li>Trust all X.509 server certificates (for HTTPS connections), 
- *         including self-signed.
  * </ul>
  *
  * @since 1.4
@@ -183,20 +181,7 @@ public class JSONRPC2SessionOptions {
 	 * The default HTTP GZIP and DEFLATE compression enable policy.
 	 */
 	public static final boolean DEFAULT_ENABLE_COMPRESSION = false;
-	
-	
-	/**
-	 * If {@code true} self-signed certificates presented by the JSON-RPC 
-	 * 2.0 server must be accepted.
-	 */
-	private boolean trustAll = DEFAULT_TRUST_ALL;
-	
-	
-	/**
-	 * The default policy for trusting self-signed certificates. Set to
-	 * {@code false} (self-signed certificates not accepted).
-	 */
-	public static final boolean DEFAULT_TRUST_ALL = false;
+
 
 
 	/**
@@ -233,10 +218,6 @@ public class JSONRPC2SessionOptions {
 	 *
 	 * <p>HTTP response compression (GZIP or DEFLATE) is disabled. To 
 	 * enable it use {@link #enableCompression(boolean)}.
-	 *
-	 * <p>Self-signed X.509 certificates presented by the JSON-RPC 2.0
-	 * server will not be accepted. To relax certificate cheking use
-	 * {@link #trustAllCerts}.
 	 */
 	public JSONRPC2SessionOptions() {
 	
@@ -601,37 +582,5 @@ public class JSONRPC2SessionOptions {
 		return enableCompression;
 	}
 	
-	
-	/**
-	 * Controls checking of X.509 certificates presented by the server when
-	 * establishing a secure HTTPS connection. The default behaviour is to 
-	 * accept only certicates issued by a trusted certificate authority 
-	 * (CA), as determined by the default Java trust store. By passing a
-	 * boolean {@code false} this security check is disabled and all 
-	 * certificates will be trusted, including self-signed ones. Use this
-	 * for testing and development purposes only.
-	 *
-	 * @param trustAll If {@code true} all X.509 certificates presented by 
-	 *                 the web server will be trusted, including self-signed
-	 *                 ones. If {@code false} the default security policy
-	 *                 will be restored.
-	 */
-	public void trustAllCerts(final boolean trustAll) {
-	
-		this.trustAll = trustAll;
-	}
-	
-	
-	/**
-	 * Returns {@code true} if all X.509 certificates presented by the web
-	 * server will be trusted, including self-signed ones. If {@code false} 
-	 * the default security policy applies.
-	 *
-	 * @return {@code true} if all X.509 certificates are trusted, else
-	 *         {@code false}.
-	 */
-	public boolean trustsAllCerts() {
-	
-		return trustAll;
-	}
+
 }

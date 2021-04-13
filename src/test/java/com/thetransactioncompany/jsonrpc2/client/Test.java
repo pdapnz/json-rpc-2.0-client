@@ -266,49 +266,6 @@ public class Test extends TestCase {
 	}
 
 
-	// Disable temporarily
-	public void _testRequestTrustAllCerts() {
-
-		// Assumes a Json2Ldap service
-
-		JSONRPC2Request request = new JSONRPC2Request(RPC_METHOD_GOOD, 0);
-
-		URL url = null;
-
-		try {
-			url = new URL(URL_HTTPS_SELF_SIGNED);
-
-		} catch (MalformedURLException e) {
-			fail(e.getMessage());
-		}
-
-		JSONRPC2Session session = new JSONRPC2Session(url);
-
-		JSONRPC2SessionOptions opts = session.getOptions();
-		opts.trustAllCerts(true);
-		session.setOptions(opts);
-
-
-		JSONRPC2Response response = null;
-
-		try {
-			response = session.send(request);
-
-		} catch (JSONRPC2SessionException e) {
-
-			String msg = e.getMessage();
-
-			Throwable cause = e.getCause();
-			if (cause != null)
-				msg += ": " + cause.getMessage();
-
-			fail(msg);
-		}
-
-		System.out.println("Response: " + response);
-	}
-
-
 	public void testRequestIDMatchingBoolean() {
 
 		// Assumes a Json2Ldap service

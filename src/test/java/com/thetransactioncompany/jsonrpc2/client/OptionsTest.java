@@ -31,7 +31,6 @@ public class OptionsTest extends TestCase {
 		assertEquals(0, JSONRPC2SessionOptions.DEFAULT_CONNECT_TIMEOUT);
 		assertEquals(0, JSONRPC2SessionOptions.DEFAULT_READ_TIMEOUT);
 		assertFalse(JSONRPC2SessionOptions.DEFAULT_ENABLE_COMPRESSION);
-		assertEquals(false, JSONRPC2SessionOptions.DEFAULT_TRUST_ALL);
 	}
 	
 	
@@ -51,8 +50,7 @@ public class OptionsTest extends TestCase {
 		assertEquals(0, opts.getReadTimeout());
 		assertNull(opts.getProxy());
 		assertFalse(opts.enableCompression());
-		assertEquals(false, opts.trustsAllCerts());
-		
+
 		assertTrue(opts.isAllowedResponseContentType("application/json"));
 		assertTrue(opts.isAllowedResponseContentType("text/plain"));
 	}
@@ -171,13 +169,5 @@ public class OptionsTest extends TestCase {
 		opts.enableCompression(true);
 		assertTrue(opts.enableCompression());
 	}
-	
-	
-	public void testTrustAllCerts() {
-	
-		JSONRPC2SessionOptions opts = new JSONRPC2SessionOptions();
-		
-		opts.trustAllCerts(true);
-		assertTrue(opts.trustsAllCerts());
-	}
+
 }

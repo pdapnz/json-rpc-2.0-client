@@ -118,3 +118,9 @@ version 1.16.4 (2016-02-18)
 
 version 1.16.5 (2021-03-16)
     * Updates to JSON-RPC 2.0 Base 1.38.2.
+
+version 1.16.6 (2021-04-12)
+    * Removed optional setting to trust self-signed server sertificates for
+      secure HTTPS connections, to avoid triggering X509TrustManager's security
+      vulnerabilities not compliant with Google Play Policies in Google Play Market.
+      Details: https://support.google.com/faqs/answer/6346016
